@@ -245,4 +245,6 @@ public interface PouGameManager {
 
 
     void updateAndroid(InformacionPou informacionPou);
+
+    public List<String> obtenerListaRespuestas();
 }

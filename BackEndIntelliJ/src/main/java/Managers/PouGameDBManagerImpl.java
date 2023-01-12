@@ -183,6 +183,9 @@ public class PouGameDBManagerImpl implements PouGameManager {
     }
 
     @Override
+    public List<String> obtenerListaRespuestas(){return null;}
+
+    @Override
     public void pouCompraArticulos(String pouId, String articuloId, Integer cantidad, String tipoArticulo) throws ObjetoTiendaNoExisteException, PouIDNoExisteException, PouNoTieneDineroSuficienteException {
         List<ObjetoTienda> listaTienda = (List<ObjetoTienda>) this.session.getElementos(ObjetoTienda.class, "articuloId", articuloId);
         ObjetoTienda objetoTienda = listaTienda.get(0);

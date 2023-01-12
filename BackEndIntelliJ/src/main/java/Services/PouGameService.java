@@ -20,6 +20,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.lang.reflect.Array;
 import java.util.List;
 
 @Api(value = "/pougame", description = "Endpoint to Pou Game Service")
@@ -293,6 +294,23 @@ public class PouGameService {
         List<Pou> listaPous = this.jvm.obtenerPousOrdenadosDescendentemente(rankingId);
         GenericEntity<List<Pou>> enviarListaPous = new GenericEntity<List<Pou>>(listaPous) {};
         return Response.status(201).entity(enviarListaPous).build();
+    }
+
+    // OPERACION ANDROID 5: OBTENER UNA LISTA CON TODAD LAS FAQS
+    // MÉTODO HTTP: GET.
+    // ESTRUCTURA: public List<String> obtenerListaRespuestas ();
+    // EXCEPCIONES: -
+    @GET
+    @ApiOperation(value = "Pedir la información de los Pous ordenados por una de sus columnas.", notes = "-")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "¡Hecho!", response = Array.class, responseContainer="List"),
+    })
+    @Path("/{FAQS}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response obtenerListaRespuestas(@PathParam("FAQS") String FAQS) {
+        List<String> obtenerListaRespuestas = this.jvm.obtenerListaRespuestas();
+        GenericEntity<List<String>> enviarListaPreguntasRespuestas = new GenericEntity<List<String>>(obtenerListaRespuestas) {};
+        return Response.status(201).entity(enviarListaPreguntasRespuestas).build();
     }
 
 /*
