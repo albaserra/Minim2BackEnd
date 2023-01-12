@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <META HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+  <META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="funciones.js"></script>
+  <link rel="stylesheet" href="css/menuUsuario.css">
+  <link rel="stylesheet" href="css/estiloPieWeb.css">
+  <link rel="stylesheet" href="css/estiloObjetoTienda.css">
+  <meta charset="UTF-8">
+  <title id="auxTipo">Bebida</title>
+  <script>
+    $(document).ready(armarioTipo());
+  </script>
+
+</head>
+<body background="img/bebida.jpeg">
+  <header>
+    <div class="contenedor_cabecera">
+      <div class="logo">
+        <img class="imgLogo" src="img/LogoUPC.png" alt="">
+      </div>
+      <div class="titulo">
+        <h1>Las aventuras de Pou</h1>
+      </div>
+    </div>
+    <div class="contenedor_menu">
+      <div class="menu">
+        <input type="checkbox" id="check__menu">
+        <label for="check__menu" id="label__check">
+          <i class="fas fa-bars icon__menu"></i>
+        </label>
+        <nav>
+          <ul>
+            <li><a href="miPou.html"></a></li>
+            <li><a href="objetoTienda.html" >Tienda de productos para tu POU</a></li>
+            <li><a href="armario.html" id="selected">Armario</a>
+              <ul>
+                <li><a href="comida.html">Comida</a></li>
+                <li><a href="bebida.html">Bebidas</a></li>
+                <li><a href="pocion.html">Pociones</a></li>
+                <li><a href="ropa.html">Ropa</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html" onclick="borrarDatos()">LOG OUT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="card" id="aux"></section>
+  <footer>
+    <div class="container__footer">
+      <div class="box__footer">
+        <div class="logoUPC">
+          <img src="img/LogoUPC.png" alt="">
+        </div>
+        <div class="terms">
+          <p>"El único código que no tiene fallos, es el de 0 líneas" - Un sabio ...</p>
+        </div>
+      </div>
+      <div class="box__footer">
+        <h2>Soluciones</h2>
+        <a href="https://github.com/marcmmonfort/BackEnd_Proyecto_DSA">App Desarrollo</a>
+        <a href="https://www.instagram.com/fcperusg/?next=%2F">App Marketing</a>
+        <a href="https://developer.apple.com/">IOS Desarrollo</a>
+        <a href="https://developer.android.com/studio">Android Desarrollo</a>
+      </div>
+
+      <div class="box__footer">
+        <h2>Equipo</h2>
+        <a href="https://github.com/albaserra">Alba Serra</a>
+        <a href="https://github.com/VictorFernandezEscriva">Víctor Fernández</a>
+        <a href="https://github.com/eloimoncho">Eloi Moncho</a>
+        <a href="https://github.com/marcmmonfort">Marc Moran</a>
+      </div>
+
+      <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="https://es-es.facebook.com/"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="https://twitter.com/?lang=ES"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i> Linkedin</a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

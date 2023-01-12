@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+    <head>
+        <meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+        <meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="funciones.js"></script>
+        <link rel="stylesheet" href="css/menuUsuario.css">
+        <link rel="stylesheet" href="css/estiloPieWeb.css">
+        <link rel="stylesheet" href="css/estiloObjetoTienda.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="index.min.js"></script>
+        <script>
+            $(document).ready(GetListaObjectosTienda);
+        </script>
+        <title>Tienda</title>
+    </head>
+    <body>
+        <header>
+            <div class="contenedor_cabecera">
+                <div class="logo">
+                    <img class="imgLogo" src="img/LogoUPC.png" alt="">
+                </div>
+                <div class="titulo">
+                    <h1>Las aventuras de Pou</h1>
+                </div>
+            </div>
+            <div class="contenedor_menu">
+                <div class="menu">
+                    <input type="checkbox" id="check__menu">
+                    <label for="check__menu" id="label__check">
+                        <i class="fas fa-bars icon__menu"></i>
+                    </label>
+                    <nav>
+                        <ul>
+                            <li><a href="miPou.html"></a></li>
+                            <li><a href="objetoTienda.html" id="selected">Tienda de productos para tu POU</a></li>
+                            <li><a href="armario.html">Armario</a>
+                                <ul>
+                                    <li><a href="comida.html">Comida</a></li>
+                                    <li><a href="bebida.html">Bebidas</a></li>
+                                    <li><a href="pocion.html">Pociones</a></li>
+                                    <li><a href="ropa.html">Ropa</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.html" onclick="borrarDatos()">LOG OUT</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <canvas id="my-canvas"></canvas>
+        <section class="card">
+
+            <div class="popup"></div>
+
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreAgua">Agua</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_agua.png" alt="">
+                    <p id="tipoAgua">Bebida</p>
+                    <p class="ids" id="aguaId">agua</p>
+                    <div class="contenedor_precio">
+                        <p id="precioAgua">4</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadAgua" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnAgua" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('aguaId').innerText, $('#cantidadAgua').val(), document.getElementById('tipoAgua').innerText, document.getElementById('nombreAgua').innerText, document.getElementById('precioAgua').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreAquarius">Aquarius</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_aquarius.png">
+                    <p id="tipoAquarius">Bebida</p>
+                    <p class="ids" id="aquariusId">aquarius</p>
+                    <div class="contenedor_precio">
+                        <p id="precioAquarius">6</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadAquarius" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnAquarius" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('aquariusId').innerText, $('#cantidadAquarius').val(), document.getElementById('tipoAquarius').innerText, document.getElementById('nombreAquarius').innerText, document.getElementById('precioAquarius').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreCandy">Candy</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_candy.png">
+                    <p id="tipoCandy">Comida</p>
+                    <p class="ids" id="candyId">candy</p>
+                    <div class="contenedor_precio">
+                        <p id="precioCandy">6</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadCandy" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnCandy" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('candyId').innerText, $('#cantidadCandy').val(), document.getElementById('tipoCandy').innerText, document.getElementById('nombreCandy').innerText, document.getElementById('precioCandy').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreRoncola">RonCola</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_roncola.png">
+                    <p id="tipoRoncola">Bebida</p>
+                    <p class="ids" id="roncolaId">roncola</p>
+                    <div class="contenedor_precio">
+                        <p id="precioRoncola">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadRoncola" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnRoncola" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('roncolaId').innerText, $('#cantidadRoncola').val(), document.getElementById('tipoRoncola').innerText, document.getElementById('nombreRoncola').innerText, document.getElementById('precioRoncola').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreManzana">Manzana</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_manzana.png">
+                    <p id="tipoManzana">Comida</p>
+                    <p class="ids" id="manzanaId">manzana</p>
+                    <div class="contenedor_precio">
+                        <p id="precioManzana">5</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadManzana" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnManzana" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('manzanaId').innerText, $('#cantidadManzana').val(), document.getElementById('tipoManzana').innerText,  document.getElementById('nombreManzana').innerText, document.getElementById('precioManzana').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombrePizza">Pizza</h3>
+                    <img  class="imgTienda" src="img/articulo_tienda_pizza.png">
+                    <p id="tipoPizza">Comida</p>
+                    <p class="ids" id="pizzaId">pizza</p>
+                    <div class="contenedor_precio">
+                        <p id="precioPizza">7</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadPizza" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnPizza" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('pizzaId').innerText, $('#cantidadPizza').val(), document.getElementById('tipoPizza').innerText, document.getElementById('nombrePizza').innerText, document.getElementById('precioPizza').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombrePocionHambre">Poción Hambre</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_hambre.png">
+                    <p id="tipoPocionHambre">Poción</p>
+                    <p class="ids" id="pocionHambreId">hambre</p>
+                    <div class="contenedor_precio">
+                        <p id="precioPocionHambre">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadPocionHambre" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnHambre" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('pocionHambreId').innerText, $('#cantidadPocionHambre').val(), document.getElementById('tipoPocionHambre').innerText, document.getElementById('nombrePocionHambre').innerText, document.getElementById('precioPocionHambre').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombrePocionDiversion">Poción Diversión</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_diversion.png">
+                    <p id="tipoPocionDiversion">Poción</p>
+                    <p class="ids" id="pocionDiversionId">diversion</p>
+                    <div class="contenedor_precio">
+                        <p id="precioPocionDiversion">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadPocionDiversion" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnDiversion" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('pocionDiversionId').innerText, $('#cantidadPocionDiversion').val(), document.getElementById('tipoPocionDiversion').innerText, document.getElementById('nombrePocionDiversion').innerText, document.getElementById('precioPocionDiversion').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombrePocionSalud">Poción Salud</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_salud.png">
+                    <p id="tipoPocionSalud">Poción</p>
+                    <p class="ids" id="pocionSaludId">salud</p>
+                    <div class="contenedor_precio">
+                        <p id="precioPocionSalud">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadPocionSalud" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnSalud" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('pocionSaludId').innerText, $('#cantidadPocionSalud').val(), document.getElementById('tipoPocionSalud').innerText, document.getElementById('nombrePocionSalud').innerText, document.getElementById('precioPocionSalud').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombrePocionSueno">Poción Sueño</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_sueno.png">
+                    <p id="tipoPocionSueno">Poción</p>
+                    <p class="ids" id="pocionSuenoId">sueno</p>
+                    <div class="contenedor_precio">
+                        <p id="precioPocionSueno">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadPocionSueno" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnSueno" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('pocionSuenoId').innerText, $('#cantidadPocionSueno').val(), document.getElementById('tipoPocionSueno').innerText,  document.getElementById('nombrePocionSueno').innerText, document.getElementById('precioPocionSueno').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreCerveza">Gorro cerveza</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_cerveza.png">
+                    <p id="tipoCerveza">Ropa</p>
+                    <p class="ids" id="cervezaId">cerveza</p>
+                    <div class="contenedor_precio">
+                        <p id="precioCerveza">5</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadCerveza" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnCerveza" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('cervezaId').innerText, $('#cantidadCerveza').val(), document.getElementById('tipoCerveza').innerText,  document.getElementById('nombreCerveza').innerText, document.getElementById('precioCerveza').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreBoina">Boina</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_boina.png">
+                    <p id="tipoBoina">Ropa</p>
+                    <p class="ids" id="boinaId">boina</p>
+                    <div class="contenedor_precio">
+                        <p id="precioBoina">10</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadBoina" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnBoina" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('boinaId').innerText, $('#cantidadBoina').val(), document.getElementById('tipoBoina').innerText, document.getElementById('nombreBoina').innerText, document.getElementById('precioBoina').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreFCB">Camiseta FCB</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_fcb.png">
+                    <p id="tipoFCB">Ropa</p>
+                    <p class="ids" id="fcbId">fcb</p>
+                    <div class="contenedor_precio">
+                        <p id="precioFCB">50</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadFCB" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnFCB" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('fcbId').innerText, $('#cantidadFCB').val(), document.getElementById('tipoFCB').innerText,  document.getElementById('nombreFCB').innerText, document.getElementById('precioFCB').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreFiesta">Gafas de Fiesta</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_fiesta.png">
+                    <p id="tipoFiesta">Ropa</p>
+                    <p class="ids" id="gafasFiestaId">fiesta</p>
+                    <div class="contenedor_precio">
+                        <p id="precioFiesta">30</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadGafasFiesta" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnFiesta" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('gafasFiestaId').innerText, $('#cantidadGafasFiesta').val(), document.getElementById('tipoFiesta').innerText,  document.getElementById('nombreFiesta').innerText, document.getElementById('precioFiesta').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreCiclismo">Gafas de Ciclismo</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_ciclismo.png">
+                    <p id="tipoCiclismo">Ropa</p>
+                    <p class="ids" id="gafasCiclismoId">ciclismo</p>
+                    <div class="contenedor_precio">
+                        <p id="precioGafasCiclismo">14</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadGafasCiclismo" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnCiclismo" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('gafasCiclismoId').innerText, $('#cantidadGafasCiclismo').val(), document.getElementById('tipoCiclismo').innerText, document.getElementById('nombreCiclismo').innerText, document.getElementById('precioGafasCiclismo').innerText)">
+                </div>
+            </div>
+            <div class="card__objeto">
+                <div class="card__cabecera">
+                    <h3 id="nombreMessi">Zapatos Messi</h3>
+                    <img class="imgTienda" src="img/articulo_tienda_messi.png">
+                    <p id="tipoMessi">Ropa</p>
+                    <p class="ids" id="zapatosMessiId">messi</p>
+                    <div class="contenedor_precio">
+                        <p id="precioZapatosMessi">40</p>
+                        <img class="monedaImg" src="img/Coin.png">
+                    </div>
+                    <input class="cantidad" type="number" pattern="^[0-90]+" onpaste="return false;" onDrop="return false;" autocomplete=off min="0" id="cantidadZapatosMessi" value="" placeholder="Cantidad">
+                </div>
+                <hr>
+                <div>
+                    <input class="btn "type="submit" id ="btnMessi" name="" value="Comprar" onclick="tiendaAcciones(document.getElementById('zapatosMessiId').innerText, $('#cantidadZapatosMessi').val(), document.getElementById('tipoMessi').innerText, document.getElementById('nombreMessi').innerText, document.getElementById('precioZapatosMessi').innerText)">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container__footer">
+                <div class="box__footer">
+                    <div class="logoUPC">
+                        <img src="img/LogoUPC.png" alt="">
+                    </div>
+                    <div class="terms">
+                        <p>"El único código que no tiene fallos, es el de 0 líneas" - Un sabio ...</p>
+                    </div>
+                </div>
+                <div class="box__footer">
+                    <h2>Soluciones</h2>
+                    <a href="https://github.com/marcmmonfort/BackEnd_Proyecto_DSA">App Desarrollo</a>
+                    <a href="https://www.instagram.com/fcperusg/?next=%2F">App Marketing</a>
+                    <a href="https://developer.apple.com/">IOS Desarrollo</a>
+                    <a href="https://developer.android.com/studio">Android Desarrollo</a>
+                </div>
+
+                <div class="box__footer">
+                    <h2>Equipo</h2>
+                    <a href="https://github.com/albaserra">Alba Serra</a>
+                    <a href="https://github.com/VictorFernandezEscriva">Víctor Fernández</a>
+                    <a href="https://github.com/eloimoncho">Eloi Moncho</a>
+                    <a href="https://github.com/marcmmonfort">Marc Moran</a>
+                </div>
+
+                <div class="box__footer">
+                    <h2>Redes Sociales</h2>
+                    <a href="https://es-es.facebook.com/"> <i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href="https://twitter.com/?lang=ES"><i class="fab fa-twitter-square"></i> Twitter</a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i> Linkedin</a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

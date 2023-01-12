@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <META HTTP-EQUIV='Pragma' CONTENT='no-cache'>
+    <META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="funciones.js"></script>
+    <link rel="stylesheet" href="css/estiloPieWeb.css">
+    <link rel="stylesheet" href="css/menuUsuario.css">
+    <link rel="stylesheet" href="css/estiloPerfil.css">
+    <meta charset="UTF-8">
+    <title>Tienda</title>
+
+    <script>
+      $(document).ready(obtenerPouByCredentials);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="contenedor_cabecera">
+        <div class="logo">
+          <img class="imgLogo" src="img/logoUPC.png" alt="">
+        </div>
+        <div class="titulo">
+          <h1>Las aventuras de Pou</h1>
+        </div>
+      </div>
+      <div class="contenedor_menu">
+        <div class="menu">
+          <input type="checkbox" id="check__menu">
+          <label for="check__menu" id="label_check">
+            <i class="fas fa-bars icon__menu"></i>
+          </label>
+          <nav>
+            <ul>
+              <li><a href="miPou.html" id="selected"></a></li>
+              <li><a href="objetoTienda.html">Tienda de productos para tu POU</a></li>
+              <li><a href="armario.html">Armario</a>
+                <ul>
+                  <li><a href="comida.html">Comida</a></li>
+                  <li><a href="bebida.html">Bebidas</a></li>
+                  <li><a href="pocion.html">Pociones</a></li>
+                  <li><a href="ropa.html">Ropa</a></li>
+                </ul>
+              </li>
+              <li><a href="index.html" onclick="borrarDatos()">LOG OUT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="card">
+        <div class="card__objeto">
+          <div class="card__cabecera">
+            <img class="imgPou" src="img/extra_pou_logoapp.png">
+            <h3 id="nombrePou">Eloi</h3>
+            <p id="idPou">eloimoncho</p>
+            <p id="birthday"></p>
+            <p id="mailPou"></p>
+            <div class="contenedor_precio">
+              <p id="dineroPou">40</p>
+              <img class="monedaImg" src="img/Coin.png">
+            </div>
+            <p id="record">record: 145</p>
+          </div>
+          <hr>
+        </div>
+        <div class="card__wideCard">
+          <h3 for="estadoHambre">Estado del Pou:</h3><br>
+          <div class="pociones_estados">
+            <img class="imgPociones" src="img/articulo_tienda_hambre.png">
+            <progress class="barras" id="estadoHambre" max="100" value="100"></progress><br>
+          </div>
+          <div class="pociones_estados">
+            <img class="imgPociones" src="img/articulo_tienda_salud.png">
+            <progress class="barras" id="estadoSalud" max="100" value="70"></progress><br>
+          </div>
+          <div class="pociones_estados">
+            <img class="imgPociones" src="img/articulo_tienda_diversion.png">
+            <progress class="barras" id="estadoDiversion" max="100" value="50"></progress><br>
+          </div>
+          <div class="pociones_estados">
+            <img class="imgPociones" src="img/articulo_tienda_sueno.png">
+            <progress class="barras" id="estadoSueno" max="100" value="50"></progress><br>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container__footer">
+        <div class="box__footer">
+          <div class="logoUPC">
+            <img src="img/LogoUPC.png" alt="">
+          </div>
+          <div class="terms">
+            <p>"El único código que no tiene fallos, es el de 0 líneas" - Un sabio ...</p>
+          </div>
+        </div>
+        <div class="box__footer">
+          <h2>Soluciones</h2>
+          <a href="https://github.com/marcmmonfort/BackEnd_Proyecto_DSA">App Desarrollo</a>
+          <a href="https://www.instagram.com/fcperusg/?next=%2F">App Marketing</a>
+          <a href="https://developer.apple.com/">IOS Desarrollo</a>
+          <a href="https://developer.android.com/studio">Android Desarrollo</a>
+        </div>
+
+        <div class="box__footer">
+          <h2>Equipo</h2>
+          <a href="https://github.com/albaserra">Alba Serra</a>
+          <a href="https://github.com/VictorFernandezEscriva">Víctor Fernández</a>
+          <a href="https://github.com/eloimoncho">Eloi Moncho</a>
+          <a href="https://github.com/marcmmonfort">Marc Moran</a>
+        </div>
+
+        <div class="box__footer">
+          <h2>Redes Sociales</h2>
+          <a href="https://es-es.facebook.com/"> <i class="fab fa-facebook-square"></i> Facebook</a>
+          <a href="https://twitter.com/?lang=ES"><i class="fab fa-twitter-square"></i> Twitter</a>
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i> Linkedin</a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

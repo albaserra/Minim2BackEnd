@@ -1,0 +1,107 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+    color: rgb(97, 96, 96);
+}
+.card{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card__objeto{
+    width: 310px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgb(201, 201, 201);
+    border: solid rgba(3, 133, 255, 0) 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+.card__objeto:hover{
+    border: solid rgb(3, 133, 255) 2px;
+}
+.card__objeto:hover img{
+    transform: rotate(0);
+}
+.imgPou{
+    width: 140px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgb(216, 216, 216);
+    transform: rotate(-30deg);
+    transition: all .3s;
+}
+
+.card__cabecera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+hr{
+    width: 100%;
+    height: 4px;
+    background: rgb(223, 221, 221);
+    margin: 20px 5px;
+}
+.btn{
+    width: 100%;
+    height: 40px;
+    background: #c79f00;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+}
+.card__wideCard{
+    width: 610px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgb(201, 201, 201);
+    border: solid rgba(3, 133, 255, 0) 2px;
+    border-radius: 10px;
+}
+.card__wideCard:hover{
+    border: solid rgb(3, 133, 255) 2px;
+}
+
+.card__wideCard:hover img{
+    transform: rotate(0);
+}
+
+.imgPociones{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgb(216, 216, 216);
+    transform: rotate(-30deg);
+    transition: all .3s;
+}
+.pociones_estados{
+    display: flex;
+    align-items: center;
+}
+.barras{
+    margin-left: 10px;
+    width: 100%;
+}
+
+.contenedor_precio{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.monedaImg{
+    width: 15px;
+    border-radius: 50%;
+}

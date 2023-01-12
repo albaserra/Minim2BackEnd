@@ -1,0 +1,132 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+    color: rgb(97, 96, 96);
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+.card__objeto{
+    width: 310px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgb(201, 201, 201);
+    border: solid rgba(3, 133, 255, 0) 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+.card__objeto:hover{
+    border: solid rgb(3, 133, 255) 2px;
+}
+.card__objeto:hover .imgTienda{
+    transform: rotate(0);
+}
+.imgTienda{
+    width: 140px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgb(216, 216, 216);
+    transform: rotate(-30deg);
+    transition: all .3s;
+}
+.card__cabecera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+hr{
+    width: 100%;
+    height: 4px;
+    background: rgb(223, 221, 221);
+    margin: 20px 5px;
+}
+
+.btn{
+    width: 100%;
+    height: 40px;
+    background: #c79f00;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+}
+.enlace{
+    background: rgb(0, 110, 255);
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.ids{
+    display: none;
+}
+
+.contenedor_precio{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.monedaImg{
+    width: 15px;
+    border-radius: 50%;
+}
+
+.popup{
+    position: fixed;
+    top:10%;
+    left:50%;
+    transform: translate(-50%, 50%);
+    background: #c79f00;
+    width:450px;
+    height:300px;
+    z-index: 1000;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1),
+    0 0 0 1000px rgba(255,255,255,0.95);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    visibility: hidden;
+}
+
+.popup.active{
+    visibility: visible;
+}
+
+.close{
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    cursor: pointer;
+
+}
+
+#my-canvas{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    z-index: 100000;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#my-canvas.active{
+    visibility: visible;
+}
